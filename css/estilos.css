@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;700&display=swap');
+
+:root {
+    --azul: #335c67;
+    --yellow: #fff3b0;
+    --orange: #e09f3e;
+    --red: #9e2a2b;
+    --blood: #540b0e;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    font-family: 'Nunito', sans-serif;
+    background-color: var(--yellow);
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    height: 100px;
+    background-color: var(--azul);
+    display: flex;
+    padding: 0 50px;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: inset 0px -10px 10px -10px rgb(255, 255, 255);
+}
+
+.header__logo a {
+    color: beige;
+    font-size: 2.5rem;
+    word-spacing: 10px;
+    font-variant: small-caps;
+    text-shadow: 2px 2px 1px var(--red),
+                 4px 4px 3px var(--blood);
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 400px;
+}
+
+.menu a {
+    color: beige;
+    display: inline-block;
+    padding: 10px 15px;
+    transition: transform .2s ease-out;
+}
+
+.menu a:hover {
+    transform: scale(1.15);
+}
+
+.main {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 75% 25%;
+    padding: 30px 30px 200px;
+    gap: 0 20px;
+    
+}
+
+.section-products > h2 {
+    margin-bottom: 20px;
+    color: var(--azul);
+}
+
+#products {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.product {
+    text-align: center;
+    background: var(--orange);
+    border-radius: 20px;
+    box-shadow: 2px 2px 2px 0px var(--azul);
+    overflow: hidden;
+    padding-bottom: 10px;
+}
+
+.product img {
+    width: 100%;
+}
+
+.container-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.aside {
+    background-color: rgba(255, 255, 255, 0.481);
+    text-align: center;
+    border-radius: 15px;
+    padding-bottom: 20px;
+}
+
+.aside > h3 {
+    color: var(--azul);
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    height: 350px;
+    justify-content: space-between;
+}
+
+.form p * {
+    display: block;
+}
+
+.form p label {
+    margin-bottom: 4px;
+}
+
+.form p input, 
+.form p textarea {
+    margin: 0 auto;
+    width: 70%;
+    max-width: 70%;
+    min-height: 30px;
+    max-height: 110px;
+    padding: 5px;
+    background-color: transparent;
+    border: none;
+    background: linear-gradient(to bottom, transparent 70%, var(--azul));
+}
+
+.form p input::placeholder,
+.form p textarea::placeholder {
+    font-size: 1rem;
+    font-family: 'Nunito', sans-serif;
+}
+
+#boton {
+    background-color: var(--azul);
+    border: #01607b 2px solid;
+    border-radius: 5px;
+    width: 160px;
+    margin: 0 auto;
+    padding: 10px 0;
+    font-size: 1rem;
+    color: beige;
+    cursor: pointer;
+    transition: all .17s ease-out;
+}
+
+#boton:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.661);
+}
+
+#boton:active {
+    transform: translate(0, 0);
+    box-shadow: none;
+}
+
+@media (max-width: 768px){
+    .main {
+        display: flex;
+        flex-direction: column;
+    }
+    .aside {
+        margin-top: 20px;
+    }
+    .header {
+        padding: 0 10px;
+    }
+    .menu {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        text-align: center;
+        width: 200px;
+    }
+    #products {
+        grid-template-columns: 1fr 1fr;
+    }
+}

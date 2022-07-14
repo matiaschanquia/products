@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/estilos.css">
+    <title>Mi pagina</title>
+    <script defer src="js/main.js"></script> <!-- El atributo defer hace que el script sea lo ultimo que se cargue en tood el documento html -->
+</head>
+<body>
+    <header class="header">
+        <p class="header__logo"><a href="#">Products</a></p>
+        <nav class="nav">
+            <ul class="menu">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Proyectos</a></li>
+                <li><a href="#">Nosotros</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="main">
+        <section class="section-products">
+            <h2>Productos:</h2>
+            <div id="products">
+                <article class="product">
+                    <div>
+                        <img src="https://rincondelceramista.com.ar/wp-content/uploads/woocommerce-placeholder-400x400.png" alt="producto x">
+                    </div>
+                    <div class="container-info">
+                        <h4>Producto ejemplo</h4>
+                        <p>Lorem ipsum dolor sit amet...</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <aside class="aside">
+            <h3>Agregar nuevo producto:</h3>
+            <form action="" method="post" target="_blank" class="form">
+                <p>
+                    <label for="nombre-product">* Nombre:</label>
+                    <input type="text" required name="nombre-product" id="nombre-product" placeholder="Escribe el nombre">
+                </p>
+                <p>
+                    <label for="sobre-product">Sobre el producto:</label>
+                    <textarea name="sobre-product" id="sobre-product" cols="50" rows="50" placeholder="Escribe sobre el producto"></textarea>
+                </p>
+                <button id="boton">Agregar producto</button>
+            </form>
+        </aside>
+    </main>
+</body>
+</html>
