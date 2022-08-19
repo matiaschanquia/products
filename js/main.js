@@ -3,9 +3,7 @@
 const nombre = document.getElementById("nombre-product")
 const info = document.getElementById("sobre-product")
 const productos = document.getElementById("products")
-
 const boton = document.getElementById("boton")
-
 
 boton.addEventListener("click", agregarProducto)
 
