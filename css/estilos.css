@@ -34,6 +34,7 @@ li {
 
 .header {
     position: sticky;
+    z-index: 1;
     top: 0;
     height: 100px;
     background-color: var(--azul);
@@ -94,6 +95,7 @@ li {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
+    
 }
 
 .product {
@@ -103,9 +105,10 @@ li {
     box-shadow: 2px 2px 2px 0px var(--azul);
     overflow: hidden;
     padding-bottom: 10px;
+    position: relative;
 }
 
-.product img {
+.product > div > img {
     width: 100%;
 }
 
@@ -221,6 +224,21 @@ li {
 
 .footer p:first-child a:hover {
     color: var(--orange);
+}
+
+.btn-borrar {
+    position: absolute;
+    cursor: pointer;
+    top: 8px;
+    right: 8px;
+    width: 40px;
+    background-color: red;
+    border-radius: 10px;
+    transition: all .2s ease-in-out;
+}
+
+.btn-borrar:hover {
+    transform: scale(1.15);
 }
 
 @media (max-width: 768px){

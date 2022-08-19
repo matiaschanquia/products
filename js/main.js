@@ -14,10 +14,26 @@ function agregarProducto() {
     const infoProducto = info.value
     if (nombreProducto != "")
     {
-        var codigoProducto =  `<div><img src='https://rincondelceramista.com.ar/wp-content/uploads/woocommerce-placeholder-400x400.png' alt='producto x'></div><div class='container-info'><h4>${nombreProducto}</h4><p>${infoProducto}</p></div>`  /* INTERPOLACION JAVASCRIPT */
+        var codigoProducto =  `
+                            <img class="btn-borrar" src="img/delete.png" alt="delete">
+                            <div>
+                                <img src='https://rincondelceramista.com.ar/wp-content/uploads/woocommerce-placeholder-400x400.png' alt='producto x'>
+                            </div>
+                            <div class='container-info'>
+                                <h4>${nombreProducto}</h4>
+                                <p>${infoProducto}</p>
+                            </div>`   /* INTERPOLACION JAVASCRIPT */
         if (infoProducto == "")
         {
-            codigoProducto =  `<div><img src='https://rincondelceramista.com.ar/wp-content/uploads/woocommerce-placeholder-400x400.png' alt='producto x'></div><div class='container-info'><h4>${nombreProducto}</h4><p>Sin información</p></div>`
+            codigoProducto =  `
+                                <img class="btn-borrar" src="img/delete.png" alt="delete">  
+                                <div>
+                                    <img src='https://rincondelceramista.com.ar/wp-content/uploads/woocommerce-placeholder-400x400.png' alt='producto x'>
+                                </div>
+                                <div class='container-info'>
+                                    <h4>${nombreProducto}</h4>
+                                    <p>Sin información</p>
+                                </div>`
         }
         const article = document.createElement("article")
         article.className = "product" /* Crea una clase en el elemento article */
@@ -27,4 +43,15 @@ function agregarProducto() {
     }
     nombre.value = ""
     info.value = ""
+}
+
+productos.addEventListener("click", (e) => {
+    borrarProducto(e);
+})
+
+function borrarProducto(e) {
+    if (e.target.classList.contains("btn-borrar")) {
+        var product = e.target.parentNode;
+        product.remove();
+    }
 }
